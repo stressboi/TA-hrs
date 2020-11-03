@@ -5,7 +5,7 @@ brodsky@splunk.com
 
 WARNING: The use of this TA *will* create significant data privacy concerns. By using it, you will potentially scan the default gateway currently in use by a corporate-owned endpoint. While this endpoint should theoretically be the "work from home" router that is in use by your employee, if you do not take precautions, it could just as easily be the router at the local coffeehouse, or at Grandmas. I have designed several failsafes into the logic but none of them are foolproof. These failsafes are: 1) the script only scans the gateway if the Network Category is set to "Private" and 2) it only scans if the Name is set to "Frothly_WFH" -- obviously you would want to set this to whatever the Name is fo the connection profile you have set up for your work-from-home users.
 
-Regardless, you will be retrieving metadata about the egress device of your work-from-home users, and this may or may not be legal. Please see the advice of your DPO before running this in production!
+Regardless, you will be retrieving metadata about the egress device of your work-from-home users, and this may or may not be legal. Please seek the advice of your DPO before running this in production!
 
 ----
 
