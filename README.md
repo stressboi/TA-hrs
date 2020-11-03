@@ -57,8 +57,8 @@ Installation Instructions
 
 Troubleshooting
 
--Endpoint must be able to hit ipinfo.io
--Standard scripted input troubleshooting applies - check in _internal for output
+1) Endpoint must be able to hit ipinfo.io
+2) Standard scripted input troubleshooting applies - check in "_internal"
 
 Email brodsky@splunk.com with questions. Thanks!
 
