@@ -11,11 +11,11 @@ Regardless, you will be retrieving metadata about the egress device of your work
 
 This is a TA designed to run on a Windows 10 endpoint that is also running the Splunk Universal Forwarder. If you provide it with a local copy of the Windows nmap CLI tools, it will, at the prescribed interval in inputs.conf...
 
--Determine the current default gateway IP address
--Determine the MAC address of that IP from the local ARP table
--Determine the Network Category of the active connection
--Determine the current DNS server
--Determine the external IP address, AS, and IP location of the endpoint (via ipinfo.io)
+1) Determine the current default gateway IP address
+2) Determine the MAC address of that IP from the local ARP table
+3) Determine the Network Category of the active connection
+4) Determine the current DNS server
+5) Determine the external IP address, AS, and IP location of the endpoint (via ipinfo.io)
 
 It then reports all of this information via key-value pairs into a local log file (%COMPUTERNAME%_default_gw_output.log) which is monitored by an entry in the inputs.conf, and deposited into Splunk, e.g.:
 
@@ -23,8 +23,8 @@ Mon 11/02/2020 16:41:16.23 external_ip="73.217.129.100" default_gateway="192.168
 
 If the following conditions are met:
 
--Network Category is set to "Private"
--Network Name is set to "Frothly_WFH"
+1) Network Category is set to "Private"
+2) Network Name is set to "Frothly_WFH" (or whatever you set it to)
 
 ...an nmap scan will be generated against the found gateway IP address, and those results will be placed into a local log file (%COMPUTERNAME%_%DefaultGateway%.xml) which is monitored by an entry in the inputs.conf, and deposited into Splunk in XML format.
 
