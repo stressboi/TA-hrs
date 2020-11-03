@@ -7,6 +7,8 @@ WARNING: The use of this TA *will* create significant data privacy concerns. By 
 
 Regardless, you will be retrieving metadata about the egress device of your work-from-home users, and this may or may not be legal. Please seek the advice of your DPO before running this in production!
 
+The information this returns will be very useful to correlate with other telemetry about your work-from-home userbase. If you combine this collected data with, for example, your incoming VPN logs, you can confirm the external IP address the endpoint thinks it is using with the IP address seen in your VPN logs. Discrepancies in this data could represent credential misuse. Also, changes to the DNS configuration on your corporate-owned endpoints can be suspect. The data gathered about the router can be used to determine risk via vulnerability - e.g. employees found to be running very old routers or routers with known vulns could have an additional level of risk assigned to them via RBA or similar.
+
 ----
 
 This is a TA designed to run on a Windows 10 endpoint that is also running the Splunk Universal Forwarder. If you provide it with a local copy of the Windows nmap CLI tools, it will, at the prescribed interval in inputs.conf...
